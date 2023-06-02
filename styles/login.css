@@ -1,0 +1,181 @@
+.light-bg {
+    background-image: url(../assets/unsplash_jCorhBYp_C4.png);
+}
+
+.login-bg {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* height: 100vh; */
+    width: 100vw;
+}
+.white-layer {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    /* height: 100vh; */
+}
+
+
+
+/* header - logo */
+
+#logo {
+    padding-top: 27.84px;
+    justify-content: center;
+}
+
+.logo-img {
+    width: 49.58px;
+    height: 64.17px;
+    background-image: url(../assets/Joystick31.png);
+    background-size: contain;
+    transform: rotate(-15deg);
+}
+.game {
+    color: var(--super-violet);
+    text-transform: uppercase;
+    font-size: 28.57pt;
+    line-height: 30.75pt;
+    margin: 0;
+}
+
+.archive {
+    color: #414141;
+    font-size: 11.7pt;
+    line-height: 12.75pt;
+    letter-spacing: 5pt;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+
+/* Main */
+#login-main {
+    text-align: center;
+    padding: 16px;
+}
+#login-main h1 {
+    font-size: 20px;
+    line-height: 21.76px;
+    font-weight: 700;
+}
+#login-main p {
+    margin-block: 16px;
+}
+form{
+    padding: 0;
+    margin: 0;
+}
+form input{
+    width: 100%;
+    padding: 10.58px 12.73px;
+    height: 47px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 16px;
+}
+#submit-btn {
+    margin-bottom: 32px;
+    background-color: var(--light-violet);
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
+input::placeholder {
+    font-size: 14px;
+    color: var(--light-gray);
+}
+.invalid {
+    display: none;
+    text-align: start;
+    color: var(--invalid-red);
+}
+
+#eye {
+    position: absolute;
+    margin: 27px 0px 0px -33px;
+}
+
+#checkbox {
+    width: 20px;
+    height: 20px;
+    margin: 16px 0;
+}
+
+.remember, .remember p {
+    font-family: 'Exo';
+    justify-content: space-between;
+    font-size: 10.5pt;
+    color: var(--gray);
+}
+.register a, .remember a{
+    color: var(--light-violet);
+}
+.register, .register p {
+    color: var(--gray);
+    font-family: var(--sans-serif);
+    justify-content: center;
+}
+
+.or {
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.login-social div {
+    height: 47px;
+    border: solid 2px var(--light-violet);
+    border-radius: 6px;
+    margin-bottom: 16px;
+    justify-content: center;
+    color: var(--light-violet);
+}
+.login-social img{
+    height: 20px;
+}
+#facebook span::before {
+    content: url(../assets/icons/facebook-violet.svg);
+}
+#twitter span::before {
+    content: url(../assets/icons/twitter-violet.svg);
+}
+#google span::before {
+    content: url(../assets/icons/google-violet.svg);
+}
+
+
+
+
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    .dark-bg {
+        background-image: url(../assets/BG.png);
+        color: white;
+        
+    }
+    .black-layer {
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+        height: 100vh;
+    }
+    .game {
+        color: var(--cool-pink);
+    }
+    .archive {
+        color: #e6eff8;
+    }
+    .login-social div {
+        border: var(--white);
+    }
+    #facebook span::before {
+        content: url(../assets/icons/facebook-white.svg);
+    }
+    #twitter span::before {
+        content: url(../assets/icons/twitter-white.svg);
+    }
+    #google span::before {
+        content: url(../assets/icons/google-white.svg);
+    }
+}
