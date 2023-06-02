@@ -13,6 +13,8 @@ Game Finder includes:
 * view the game list in three or one column
 * responsive design
 
+Requieremnts: https://docs.google.com/document/d/1zxmbbsaJ9T_1Tck1eEmtgo7-M9Zzx3X5MA0PvEsyh8M/edit#heading=h.dzm9895qgoj9
+
 ## About me
 I’m a forming front-end developer based in Argentina. I use HTML5, CSS5 and Javascript.
 You can visit [my portfolio here](https://marianaconti.vercel.app/)
