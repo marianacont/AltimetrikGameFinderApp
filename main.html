@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="styles/general.css">
+    <title>Trending Games</title>
+</head>
+<body>
+    <!-- Navigation -->
+<nav id="nav" class="flex">
+    <img id="menu-toggler" src="assets/icons/menu.svg" alt="">
+
+    <div class="flex" id="logo-main">
+        <div class="logo-img"></div>
+        <div class="logo-text">
+            <p class="game">Game</p>
+            <p class="archive">archive</p>
+        </div>
+    </div>
+
+    <img src="assets/icons/search.svg" alt="">
+
+</nav>
+
+<div class="main_background">
+    <header class="main_header">
+        <h1>New and trending</h1>
+        <h4>Based on player counts and realease date</h4>
+    </header>
+
+    <main>
+        <div class="gallery">
+            <div class="card">
+                <div class="card_image"></div>
+                <div class="card_content">
+                    <p class="card_title">Biomutant</p>
+                    <p class="card_number">#1</p>
+                    <p class="card_realease">Realease date:</p>
+                    <p class="card_date">May, 31, 2021</p>
+                    <p class="card_genres">Genres:</p>
+                    <p class="card_genres_names">Action, RPG</p>
+                    <div class="card_icons flex">
+                        <img src="assets/icons/playstation.svg" alt="Playstation">
+                        <img src="assets/icons/xbox.svg" alt="XBox">
+                        <img src="assets/icons/windows.svg" alt="Windows">
+                        <img src="assets/icons/nintendo_switch.svg" alt="Nintendo Switch">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </main>
+
+    <aside class="menu flex">
+        <div class="user">
+            <img id="user_img" src="assets/Custom.png" alt="user">
+            <p id="name" class="bold">Jane Doe</p>
+            <p id="user_name">@janedoe</p>
+        </div>
+        <hr class="divisor">
+        <div class="sections">
+            <p class="bold active">Home</p>
+            <p class="bold">Reviews</p>
+            <p class="bold">New Releases</p>
+            <br>
+            <img src="assets/icons/star.svg" alt="">
+            <p id="week">This week</p>
+            <img src="assets/icons/calendar.svg" alt="">
+            <p id="month">This month</p>
+            <img src="assets/icons/clock.svg" alt="">
+            <p id="coming">Coming soon</p>
+            <br>
+            <p class="bold">Popular</p>
+            <p id="last-searches">Last searches</p>
+            <p id="best">Best of the year</p>
+        </div>
+            <hr class="divisor">
+
+            <p id="mode">Dark mode</p>
+            <hr class="divisor">
+
+            <p id="logout">Logout</p>
+
+    </aside>
+</div>
+
+
+    <script src="scripts/menu.js"></script>
+</body>
+</html>

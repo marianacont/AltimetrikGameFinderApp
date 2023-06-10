@@ -1,0 +1,67 @@
+aside.menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: start !important;
+    padding: 1rem;
+    font-size: .83rem;
+}
+.menu::after {
+    content: url(../assets/icons/x.svg);
+    position: absolute;
+    top: 1.31rem;
+    right: 1.31rem;
+    cursor: pointer;
+}
+.user {
+    font-family: var(--exo);
+    display: grid;
+    grid-template-areas: 
+        "a b"
+        "a c";
+    column-gap: .5rem;
+    margin-bottom: .5rem;
+}
+#user_img {
+    grid-area: a;
+}
+#name{
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    grid-area: b;
+}
+#user_name{
+    font-size: .875rem;
+    line-height: 1.16rem;
+    grid-area: c;
+}
+.sections {
+    margin-top: 1.5rem;
+    margin-bottom: 2.52rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+div.sections > .bold{
+    font-size: .92rem;
+    line-height: 1rem;
+}
+
+div.sections > .active {
+    color: var(--light-violet);
+}
+div.sections > img {
+    width: 18px;
+    height: 18px;
+}
+.divisor {
+    border: solid 1px #e4e4e4;
+    width: calc(100% + 2rem);
+    margin-inline-start: -1rem;
+    margin-inline-end: -1rem;
+}

@@ -1,0 +1,122 @@
+.main_background {
+    background-color: #e5e5e5;
+}
+#nav {
+  justify-content: space-between;
+  padding-inline: 1rem;
+  background-color: #eaeaea;
+}
+
+/* logo */
+
+#logo-main {
+    justify-content: center;
+}
+
+#logo-main .logo-img {
+    width: 49.58px;
+    height: 64.17px;
+    background-image: url(../assets/Joystick31.png);
+    background-size: contain;
+    transform: rotate(-15deg);
+}
+#logo-main  .game {
+    color: var(--super-violet);
+    text-transform: uppercase;
+    font-size: 19.66px;
+    line-height: 21.39px;
+    margin: 0;
+}
+
+#logo-main  .archive {
+    color: #414141;
+    font-size: 8.1px;
+    line-height: 8.81px;
+    letter-spacing: 3.47px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+
+/* header */
+
+.main_header {
+    padding: 5vw;
+}
+
+
+/* Main - Gallery */
+.gallery {
+    max-width: 60rem;
+    margin: auto;
+    display: grid;
+    gap: 1rem;
+    grid-auto-rows: 19.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    /* grid-template-columns: repeat(3, 1fr); */
+    padding: 1rem;
+}
+.card {
+    background-color: var(--white);
+    border-radius: .75rem;
+    overflow: hidden;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+}
+.card_image {
+    background: url(../assets/Biomutant-screenshots-gallery-08-24-2017-1.png) no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 11.875rem;
+    position: relative;
+}
+.card_image::after{
+    content: url(../assets/icons/heart.svg);
+    position: absolute;
+    top: .42rem;
+    right: .33rem;
+}
+.card_content {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+            "title number"
+            "realease date"
+            "genres genresnames"
+            "icons icons";
+    gap: .5rem;
+}
+.card_title {
+    grid-area: title;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-bottom: .5rem;
+}
+.card_number{
+    grid-area: number;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--light-violet);
+    text-align: end;
+}
+.card_realease {
+    grid-area: realease;
+    color: #939393;
+}
+.card_date {
+    grid-area: date;
+}
+.card_genres {
+    grid-area: genres;
+    color: #939393;
+}
+.card_genres_names {
+    grid-area: genresnames;
+}
+.card_icons {
+    grid-area: icons;
+    height: 1.25rem;
+}
+
+
+
