@@ -16,3 +16,24 @@ eye.addEventListener('click', (e) => {
         password.style.fontSize = '2rem';
     }
 })
+
+
+
+const form = document.getElementById('login-form');
+const inputEmail = document.getElementById('email')
+const regExpMail = /[._-\w]+@([\w-]+\.)+[\w]+/g
+
+console.log(regExpMail.test('mariana@algo.com.ar'));
+console.log(regExpMail.test('mariana@algo.com'));
+
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let mail = inputEmail.value;
+    
+    if(regExpMail.test(mail)){
+        console.log('ingreso correcto');
+    }else {
+        inputEmail.setCustomValidity('Wrong email')
+    }
+})
