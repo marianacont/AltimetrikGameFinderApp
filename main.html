@@ -11,7 +11,7 @@
 <body>
     <!-- Navigation -->
 <nav id="nav" class="flex">
-    <img id="menu-toggler" src="assets/icons/menu.svg" alt="">
+    <img id="btn-menu" src="assets/icons/menu.svg" alt="">
 
     <div class="flex" id="logo-main">
         <div class="logo-img"></div>
@@ -60,7 +60,7 @@
         </div>
     </main>
 
-    <aside class="menu flex">
+    <aside id="menu">
         <div class="user">
             <img id="user_img" src="assets/Custom.png" alt="user">
             <p id="name" class="bold">Jane Doe</p>
@@ -72,28 +72,47 @@
             <p class="bold">Reviews</p>
             <p class="bold">New Releases</p>
             <br>
-            <img src="assets/icons/star.svg" alt="">
-            <p id="week">This week</p>
-            <img src="assets/icons/calendar.svg" alt="">
-            <p id="month">This month</p>
-            <img src="assets/icons/clock.svg" alt="">
-            <p id="coming">Coming soon</p>
+            <!-- <ul>
+                <li id="week">This week</li>
+                <li id="month">This month</li>
+                <li id="coming">Coming soon</li>
+            </ul> -->
+            <div class="icon-text">
+                <img src="assets/icons/star.svg" alt="">
+                <p id="week">This week</p>
+                <img src="assets/icons/calendar.svg" alt="">
+                <p id="month">This month</p>
+                <img src="assets/icons/clock.svg" alt="">
+                <p id="coming">Coming soon</p>  
+            </div>      
             <br>
             <p class="bold">Popular</p>
-            <p id="last-searches">Last searches</p>
-            <p id="best">Best of the year</p>
+            <div class="icon-text">
+                <img src="assets/icons/search-violet.svg" alt="">
+                <p id="last-searches">Last searches</p>
+                <img src="assets/icons/thumbsup.svg" alt="">
+                <p id="best">Best of the year</p>
+            </div>
+            
         </div>
             <hr class="divisor">
-
+        <div class="icon-text">
             <p id="mode">Dark mode</p>
+            <button class="switch">
+                <p>ON</p>
+                <p>OFF</p>
+            </button>
+        </div>
+
             <hr class="divisor">
 
             <p id="logout">Logout</p>
-
+        <img class="btn-close" src="assets/icons/x.svg" alt="">
     </aside>
 </div>
 
 
     <script src="scripts/menu.js"></script>
+    <script src="scripts/darkMode.js"></script>
 </body>
 </html>

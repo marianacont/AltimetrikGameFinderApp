@@ -1,4 +1,4 @@
-aside.menu {
+aside {
     display: none;
     position: fixed;
     top: 0;
@@ -11,8 +11,8 @@ aside.menu {
     padding: 1rem;
     font-size: .83rem;
 }
-.menu::after {
-    content: url(../assets/icons/x.svg);
+
+.btn-close {
     position: absolute;
     top: 1.31rem;
     right: 1.31rem;
@@ -64,4 +64,60 @@ div.sections > img {
     width: calc(100% + 2rem);
     margin-inline-start: -1rem;
     margin-inline-end: -1rem;
+}
+
+
+.icon-text{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+#dark, #logout {
+    font-family: var(--exo);
+    font-size: .94rem;
+}
+
+.switch {
+    width: 2.75rem;
+    height: 1.375rem;
+    background-color: #e1e1e4;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    padding: .4rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    cursor: pointer;
+}
+.switch p{
+    font-size: .5rem;
+}
+.switch::after {
+    content: '';
+    display: block;
+    width: 1.125rem;
+    height: 1.125rem;
+    background-color: var(--white);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 50%;
+    margin: .1rem;
+    transition: .3s ease all;
+}
+.switch.active {
+    background-color: #5F81FB;
+}
+.switch.active p {
+    color: var(--white);
+}
+.switch.active::after {
+    right: 0;
+    left: unset;
 }
