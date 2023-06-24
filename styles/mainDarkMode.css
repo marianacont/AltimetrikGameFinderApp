@@ -1,0 +1,50 @@
+/* Backgrounds and text color */
+.dark-mode .main_background {
+    background-color: #151515;
+    color: #fff;
+}
+.dark-mode p,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3{
+    color: #fff;
+}
+.dark-mode h4 {
+    color: var(--light-gray);
+}
+.dark-mode #nav {
+    background-color: #1b1b1b;
+    color: #fff;
+}
+
+/* Cards colors */
+.dark-mode .card {
+    background-color: #303030;
+}
+.dark-mode p.card_number {
+    color: var(--light-violet);
+}
+
+/* Logo colors */
+.dark-mode #logo-main .game {
+    color: #efc0ff;
+}
+.dark-mode #logo-main .archive {
+    color: #e6eff8;
+}
+
+
+/* Menu */
+.dark-mode #btn-menu {
+    fill: #fff;
+}
+
+.dark-mode #menu {
+    background-color: #151515;
+}
+.dark-mode .divisor {
+    border: solid 1px #515151;
+}
+.dark-mode .btn-close {
+    fill: #fff;
+}

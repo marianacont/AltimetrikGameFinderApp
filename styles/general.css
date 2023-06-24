@@ -5,6 +5,7 @@
 @import url(login.css);
 @import url(main.css);
 @import url(menu.css);
+@import url(mainDarkMode.css);
 
 
 
@@ -25,6 +26,7 @@
     --dark-gray: #303030;
     --gray: #515151;
     --light-gray: #939393;
+    --e1-gray: #e1e1e1;
     --white: #fff;
 
     --invalid-red: #ff0000;
@@ -37,6 +39,7 @@
 
 * {
     font-family: var(--archivo);
+    font-size: 100%;
     color: var(--black);
     box-sizing: border-box;
     margin: 0;
@@ -93,4 +96,12 @@ a {
     display: flex;
     gap: 10px;
     align-items: center;
+}
+
+
+.w100 {
+    width: 100%;
+}
+.w50 {
+    width: 50%;
 }

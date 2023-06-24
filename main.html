@@ -11,7 +11,16 @@
 <body>
     <!-- Navigation -->
 <nav id="nav" class="flex">
-    <img id="btn-menu" src="assets/icons/menu.svg" alt="">
+    <svg 
+        id="btn-menu"
+        width="24" height="24" 
+        
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" 
+        clip-rule="evenodd" 
+        d="M4 5a1 1 0 0 0 0 2h16a1 1 0 1 0 0-2H4zm-1 7a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1z" 
+        /></svg>
+
 
     <div class="flex" id="logo-main">
         <div class="logo-img"></div>
@@ -21,14 +30,39 @@
         </div>
     </div>
 
-    <img src="assets/icons/search.svg" alt="">
+    <div class="search-bar flex">
+        <img class="lens" src="assets/icons/search.svg" alt="">
+        <input type="text" name="search-input" class="search-input" placeholder="Search games...">
+    </div>
+    
+    <div class="user-nav">
+        <p class="logout">Logout</p>
+        <img id="user_img" src="assets/Custom.png" alt="user">
+    </div>
 
 </nav>
 
+    <!-- Main -->
 <div class="main_background">
     <header class="main_header">
-        <h1>New and trending</h1>
-        <h4>Based on player counts and realease date</h4>
+        <div>
+            <h1>New and trending</h1>
+            <h4>Based on player counts and realease date</h4>
+        </div>
+
+        <div class="options">
+            <div class="dark-mode-btn">
+                <p class="mode">Dark mode</p>
+                <button class="switch">
+                    <p>ON</p>
+                    <p>OFF</p>
+                </button>
+            </div>
+            <div class="gallery-view flex">
+                <img class="three-col active" src="assets/icons/columns.png"></img>
+                <img class="one-col" src="assets/icons/Shape.png"></img>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -36,18 +70,31 @@
             <div class="card">
                 <div class="card_image"></div>
                 <div class="card_content">
-                    <p class="card_title">Biomutant</p>
-                    <p class="card_number">#1</p>
-                    <p class="card_realease">Realease date:</p>
-                    <p class="card_date">May, 31, 2021</p>
-                    <p class="card_genres">Genres:</p>
-                    <p class="card_genres_names">Action, RPG</p>
+                    <div class="flex w100">
+                        <p class="card_title">Biomutant</p>
+                        <p class="card_number">#1</p>
+                    </div>
+                    
+                    <div class="flex w100">
+                        <p class="card_realease">Realease date:</p>
+                        <p class="card_date">May, 31, 2021</p>
+                    </div>
+
+                    <div class="flex w100">
+                        <p class="card_genres">Genres:</p>
+                        <p class="card_genres_names">Action, RPG</p>
+                    </div>
+
                     <div class="card_icons flex">
                         <img src="assets/icons/playstation.svg" alt="Playstation">
                         <img src="assets/icons/xbox.svg" alt="XBox">
                         <img src="assets/icons/windows.svg" alt="Windows">
                         <img src="assets/icons/nintendo_switch.svg" alt="Nintendo Switch">
                     </div>
+
+                    <p class="card_description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio numquam illo beatae voluptatibus? Illum quisquam laudantium rem harum earum dolorem doloribus aspernatur quaerat reprehenderit, ad suscipit ipsa minima culpa voluptate ea praesentium ducimus cum fugit ipsam, quos iusto veniam. Ab velit eum reiciendis porro voluptatibus sed doloribus voluptatem nulla eveniet, quaerat odio aperiam tempore ea id ex obcaecati, maiores autem eligendi odit animi facilis iste deserunt veniam officiis. Autem, vitae recusandae!
+                    </p>
 
                 </div>
             </div>
@@ -60,13 +107,17 @@
         </div>
     </main>
 
+    <!-- Menu -->
     <aside id="menu">
-        <div class="user">
+        <div>
+            <div class="user">
             <img id="user_img" src="assets/Custom.png" alt="user">
             <p id="name" class="bold">Jane Doe</p>
             <p id="user_name">@janedoe</p>
         </div>
         <hr class="divisor">
+        </div>
+       
         <div class="sections">
             <p class="bold active">Home</p>
             <p class="bold">Reviews</p>
@@ -95,24 +146,38 @@
             </div>
             
         </div>
+
+        <div>
             <hr class="divisor">
-        <div class="icon-text">
-            <p id="mode">Dark mode</p>
-            <button class="switch">
-                <p>ON</p>
-                <p>OFF</p>
-            </button>
+            
+            <div class="dark-mode-btn">
+                <p class="mode">Dark mode</p>
+                <button class="switch">
+                    <p>ON</p>
+                    <p>OFF</p>
+                </button>
+            </div>
+
+            <hr class="divisor">
+
+            <p class="logout">Logout</p>
+
+            <svg 
+                class="btn-close" 
+                width="24" height="24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" 
+                d="M5.293 5.293a1 1 0 0 1 1.414 0L12 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414L13.414 12l5.293 5.293a1 1 0 0 1-1.414 1.414L12 13.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L10.586 12 5.293 6.707a1 1 0 0 1 0-1.414z" /></svg>
         </div>
-
-            <hr class="divisor">
-
-            <p id="logout">Logout</p>
-        <img class="btn-close" src="assets/icons/x.svg" alt="">
+           
     </aside>
 </div>
 
 
+<script type="module" src="./scripts/index.js"></script>
     <script src="scripts/menu.js"></script>
-    <script src="scripts/darkMode.js"></script>
+    
+    <script src="scripts/columns.js"></script>
+    <script src="scripts/fetchApi.js"></script>
 </body>
 </html>

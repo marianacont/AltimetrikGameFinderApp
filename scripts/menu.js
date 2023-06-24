@@ -5,10 +5,12 @@ const menuClose = document.querySelector('.btn-close');
 
 menuOpen.addEventListener('click', (e) => {
     e.preventDefault();
-    menu.classList.add('flex');
+    menu.classList.add('menu-open');
+
 });
 
 menuClose.addEventListener('click', (e) => {
     e.preventDefault();
-    menu.classList.remove('flex');
+    menu.classList.remove('menu-open');
 })
+

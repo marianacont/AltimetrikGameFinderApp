@@ -13,7 +13,6 @@
     background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(5px);
     height: 100vh;
-    padding-block: 27.84px;
 }
 
 
@@ -50,7 +49,7 @@
 }
 
 
-/* Main */
+/* Form */
 #login-main {
     text-align: center;
     padding: 1rem;
@@ -64,12 +63,12 @@
     font-size: .875rem;
     margin-block: .875rem;
 }
-form{
+#login-form{
     padding: 0;
     margin: 0;
     position: relative;
 }
-form input{
+.form-input{
     width: 100%;
     padding: 10.58px 12.73px;
     height: 47px;
@@ -77,7 +76,10 @@ form input{
     border-radius: .25rem;
     margin-top: 1rem;
 }
-#pass {
+.form-input:focus{
+    outline: none;
+}
+#pass:focus {
     font-size: 2rem;
 }
 
@@ -108,11 +110,30 @@ input::placeholder {
     cursor: pointer;
 }
 
-#checkbox {
+/* #checkbox {
+    cursor: pointer;
     width: 20px;
     height: 20px;
     margin: 1rem 0;
+    padding: 0;
+    border: 2px solid #000;
+    border-radius: 20%;
     accent-color: var(--light-violet);
+} */
+
+#checkbox {
+    appearance: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin: 1rem 0;
+    padding: 0;
+    border: 2px solid #000;
+    border-radius: 20%;
+}
+#checkbox:checked{
+    background: var(--light-violet) url(../assets/icons/check.svg) no-repeat center;
+    background-size:contain;
 }
 
 
@@ -142,7 +163,7 @@ input::placeholder {
     border: solid 2px var(--light-violet);
     border-radius: 0.375rem;
     margin-bottom: 1rem;
-    justify-content: center;
+    padding-left: 25%;
     color: var(--light-violet);
 }
 .login-social img{
@@ -226,7 +247,7 @@ input::placeholder {
     .archive {
         font-size: 1.125rem;
         line-height: 19.54px;
-        letter-spacing: 7.7px;
+        /* letter-spacing: 7.7px; */
     }
 }
 

@@ -1,41 +1,8 @@
 .main_background {
     background-color: #e5e5e5;
-}
-#nav {
-  justify-content: space-between;
-  padding-inline: 1rem;
-  background-color: #eaeaea;
+    padding-bottom: 4rem;
 }
 
-/* logo */
-
-#logo-main {
-    justify-content: center;
-}
-
-#logo-main .logo-img {
-    width: 49.58px;
-    height: 64.17px;
-    background-image: url(../assets/Joystick31.png);
-    background-size: contain;
-    transform: rotate(-15deg);
-}
-#logo-main  .game {
-    color: var(--super-violet);
-    text-transform: uppercase;
-    font-size: 19.66px;
-    line-height: 21.39px;
-    margin: 0;
-}
-
-#logo-main  .archive {
-    color: #414141;
-    font-size: 8.1px;
-    line-height: 8.81px;
-    letter-spacing: 3.47px;
-    text-transform: uppercase;
-    margin: 0;
-}
 
 
 /* header */
@@ -43,19 +10,23 @@
 .main_header {
     padding: 5vw;
 }
+.options{
+    display: none;
+    cursor: pointer;
+}
 
 
 /* Main - Gallery */
 .gallery {
-    max-width: 60rem;
+    max-width: 1169px;
     margin: auto;
     display: grid;
     gap: 1rem;
-    grid-auto-rows: 19.6rem;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    /* grid-template-columns: repeat(3, 1fr); */
+    grid-auto-rows: 332px;
+    grid-template-columns: 1fr;
     padding: 1rem;
 }
+
 .card {
     background-color: var(--white);
     border-radius: .75rem;
@@ -77,46 +48,135 @@
 }
 .card_content {
     padding: 1rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-template-columns: 1fr 1fr;
     grid-template-areas: 
             "title number"
             "realease date"
             "genres genresnames"
-            "icons icons";
+            "icons icons"; */
     gap: .5rem;
 }
+.card_content div:nth-child(1){
+    width: 100%;
+    justify-content: space-between;
+}
 .card_title {
-    grid-area: title;
+    /* grid-area: title; */
     font-size: 1.5rem;
     font-weight: 700;
     padding-bottom: .5rem;
 }
 .card_number{
-    grid-area: number;
     font-size: 1.125rem;
     font-weight: 700;
     color: var(--light-violet);
     text-align: end;
 }
 .card_realease {
-    grid-area: realease;
     color: #939393;
 }
-.card_date {
-    grid-area: date;
-}
+
 .card_genres {
-    grid-area: genres;
     color: #939393;
-}
-.card_genres_names {
-    grid-area: genresnames;
 }
 .card_icons {
     grid-area: icons;
     height: 1.25rem;
+    padding-top: .5rem;
+}
+.card_description {
+    display: none;
 }
 
 
 
+
+@media screen and (min-width: 768px) {
+    .main_header {
+        display: flex;
+        justify-content: space-between;
+    }
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        padding-inline: 1.5rem;
+        grid-auto-rows: 314px;
+    }
+    .options {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+    .options .mode {
+        display: initial;
+    }
+    .options .switch {
+        display: flex;
+        background-color: var(--e1-gray);
+    }
+    .three-col, .one-col {
+        background-color: var(--e1-gray);
+        padding: .5rem;
+        height: 2rem;
+        border-radius: .5rem;
+        opacity: 0.3;
+    }
+    .three-col.active, .one-col.active {
+        background-color: var(--e1-gray);
+        opacity: 1;
+    }
+
+    .card_content  {
+        position: relative;
+    }
+    .card_icons {
+        position: absolute;
+        top: 3rem;
+        right: 1rem;
+    }
+}
+
+    /* One-column gallery design */
+    .one-column {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 516px;
+        width: 697px;
+    }
+
+    .one-column .card_image {
+        height: 20rem;
+    }
+    /* .one-column .card_content {
+        row-gap: 2rem;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-areas: 
+                "title title title title title title number"
+                "realease date genres genresnames . . icons"
+                "desc desc desc desc desc desc desc";
+        gap: .5rem;
+    } */
+    .one-column .card_description {
+        display: block;
+    }
+
+
+@media screen and (min-width: 1440px) {
+    .main_background {
+        display: grid;
+        grid-template-areas: 
+                'mainheader mainheader mainheader'
+                'mainmenu gallery gallery';
+    }
+    .main_header {
+        grid-area: mainheader;
+    }
+    .gallery {
+        grid-area: gallery;
+    }
+    #menu{
+        grid-area: mainmenu;
+    }
+   
+}

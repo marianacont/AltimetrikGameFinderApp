@@ -28,23 +28,25 @@
 
             <form id="login-form">
                 <label for="email"></label>
-                <input id="email" type="email" placeholder="Username or email" required>
+                <input id="email" class="form-input" type="email" placeholder="Username or email" required>
                 <p class="invalid">Invalid email</p>
 
                 <label for="pass"></label>
-                <input id="pass" type="password" placeholder="Password" required>
-                <img id="eye" src="assets/icons/eye.svg" alt="eye">
+                <input id="pass" class="form-input" type="password" placeholder="Password" required>
+                
+                <img id="eye" src="assets/icons/eye-off.svg" alt="eye">
+
                 <p class="invalid">Invalid password or email</p>
 
                 <div class="flex remember">
                     <div class="flex">
-                        <input id="checkbox" type="checkbox">
-                        <p>Remember me</p>                      
+                        <input id="checkbox" class="form-input" type="checkbox">
+                        <p>Remember me</p>        
                     </div>
                     <a href="#">Forgot password?</a>
                 </div>
 
-                <input id="submit-btn" type="submit" value="Log in">
+                <input id="submit-btn" class="form-input" type="submit" value="Log in">
 
                 <div class="register flex">
                     <p>Not registered yet?</p>

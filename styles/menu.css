@@ -1,3 +1,43 @@
+#nav {
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #eaeaea;
+  }
+  
+  /* logo */
+  
+  #logo-main {
+      justify-content: center;
+  }
+  
+  #logo-main .logo-img {
+      width: 24.25px;
+      height: 33px;
+      background-image: url(../assets/Joystick31.png);
+      background-size: contain;
+      transform: rotate(-15deg);
+  }
+  #logo-main  .game {
+      color: var(--super-violet);
+      text-transform: uppercase;
+      font-size: 1.23rem;
+      line-height: 1.33rem;
+      margin: 0;
+  }
+  
+  #logo-main  .archive {
+      color: #414141;
+      font-size: .5rem;
+      line-height: .55rem;
+      letter-spacing: .24rem;
+      text-transform: uppercase;
+      margin: 0;
+  }
+
+
+
+/* Menu */
+
 aside {
     display: none;
     position: fixed;
@@ -6,12 +46,17 @@ aside {
     background-color: white;
     width: 100vw;
     height: 100vh;
-    flex-direction: column;
-    align-items: start !important;
     padding: 1rem;
     font-size: .83rem;
 }
 
+.menu-open {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    padding: 1rem;
+}
 .btn-close {
     position: absolute;
     top: 1.31rem;
@@ -49,7 +94,7 @@ aside {
 }
 div.sections > .bold{
     font-size: .92rem;
-    line-height: 1rem;
+    padding-block: .5rem;
 }
 
 div.sections > .active {
@@ -60,8 +105,9 @@ div.sections > img {
     height: 18px;
 }
 .divisor {
+    position: absolute;
     border: solid 1px #e4e4e4;
-    width: calc(100% + 2rem);
+    width: 100%;
     margin-inline-start: -1rem;
     margin-inline-end: -1rem;
 }
@@ -75,7 +121,7 @@ div.sections > img {
     gap: .5rem;
 }
 
-#dark, #logout {
+#mode, #logout {
     font-family: var(--exo);
     font-size: .94rem;
 }
@@ -120,4 +166,149 @@ div.sections > img {
 .switch.active::after {
     right: 0;
     left: unset;
+}
+.dark-mode-btn {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding-block: 1rem;
+}
+.logout {
+    padding-block: 1rem;
+}
+
+.user-nav {
+    display: none;
+}
+
+.search-input {
+    display: none;
+    border: none;
+    padding: .5rem;
+    padding-left: 2.25rem;
+    width: 362px;
+    height: 47px;
+}
+
+
+
+
+
+@media screen and (min-width: 768px){
+    #nav{
+        display: grid;
+        grid-template-areas: "log sea ham us";
+        justify-content: end;
+        gap: 2rem;
+        padding: 1rem;
+    }
+    #btn-menu {
+        grid-area: ham;
+    }
+    .search-bar {
+        grid-area: sea;
+    }
+    .user-nav {
+        grid-area: us;
+        display: block;
+
+    }
+    #logo-main {
+        grid-area: log;
+        position: absolute;
+    }
+   .user-nav .logout {
+    display: none;
+   }
+
+   /* Logo tablet */
+   #logo-main .logo-img {
+    width: 31.44px;
+    height: 42.78px;
+    }
+    #logo-main  .game {
+        font-size: 1.6rem;
+        line-height: 1.75rem;
+    }
+
+    #logo-main  .archive {
+        font-size: .65rem;
+        line-height: .71rem;
+        letter-spacing: .3rem;
+    }
+
+    .sections, .dark-mode-btn, .logout {
+        padding-left: 2rem;
+    }
+
+    div.sections > .bold{
+        font-size: 1.25rem;
+    }
+    div.sections {
+        font-size: 1.125rem;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    #nav {
+        justify-content: space-between;
+        grid-template-areas: "log sea us";
+    }
+    #menu{
+        display: flex;
+        flex-wrap: wrap; 
+        align-content: flex-start;
+        justify-content: start;
+        position: initial;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+    }
+    .mode, .logout, .switch, .user, #btn-menu, .btn-close {
+        display: none;
+    }
+    .search-bar {
+        position: relative;
+    }
+    .search-input {
+        display: inline;
+    }
+    .lens {
+        position: absolute;
+        padding: 11px;
+    }
+    .user-nav {
+        display: flex;
+        gap: 1rem;
+    }
+    .user-nav .logout {
+        display: initial;
+    }
+    .logout {
+        font-weight: 700;
+        font-size: 1rem;
+    }
+
+       /* Logo tablet */
+    #logo-main {
+        position: initial;
+    }
+   #logo-main .logo-img {
+    width: 44.24px;
+    height: 57.26px;
+    }
+    #logo-main  .game {
+        font-size: 2.125rem;
+        line-height: 2.312rem;
+    }
+
+    #logo-main  .archive {
+        font-size: .875rem;
+        line-height: .95rem;
+        letter-spacing: .41rem;
+    }
+    .divisor {
+        display: none;
+    }
 }
