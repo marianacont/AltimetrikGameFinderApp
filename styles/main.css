@@ -82,9 +82,16 @@
     color: #939393;
 }
 .card_icons {
-    grid-area: icons;
+    width: 30%;
     height: 1.25rem;
     padding-top: .5rem;
+    font-size: .5rem;
+    flex-wrap: wrap;
+    gap: .25rem;
+    justify-content: end;
+}
+.card_icons img{
+    width: 15px;
 }
 .card_description {
     display: none;

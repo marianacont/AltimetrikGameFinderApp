@@ -1,7 +1,7 @@
 import { darkModeListener } from "./darkMode.js";
 import { showSearchInput } from "./showSearchInput.js";
 import { changeColumnViewListener } from "./columns.js";
-import { fetchGameApi } from "./fetchApi.js";
+// import {  } from "./fetchApi.js";
 
 // Dark-mode button
 const switchMode = document.querySelectorAll('.switch');
@@ -27,4 +27,3 @@ colBtn.forEach(changeColumnViewListener)
 
 
 // fetch api
-fetchGameApi()
