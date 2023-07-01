@@ -11,12 +11,19 @@ function enableDarkMode() {
 
 
 export function darkModeListener(btn) {
+    let btnMain = document.getElementById('dark-mode-btn-main');
+    let btnMenu = document.getElementById('dark-mode-btn-menu');
+
     btn.addEventListener('click', enableDarkMode);
     btn.addEventListener('click', () => {
+
+
         if(localStorage.mode === "dark"){
-            return btn.classList.add('active');
+            btnMain.classList.add('active');
+            btnMenu.classList.add('active');
         } else {
-           return btn.classList.remove('active');
+           btnMain.classList.remove('active');
+           btnMenu.classList.remove('active');
         }
     })
 };

@@ -62,11 +62,19 @@
     width: 100%;
     justify-content: space-between;
 }
+.card_content div:nth-child(2){
+    width: 70%;
+}
+.card_content div:nth-child(3){
+    width: 70%;
+}
 .card_title {
-    /* grid-area: title; */
     font-size: 1.5rem;
     font-weight: 700;
-    padding-bottom: .5rem;
+    padding-block: .5rem;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .card_number{
     font-size: 1.125rem;
@@ -81,6 +89,19 @@
 .card_genres {
     color: #939393;
 }
+.card_genres_names{
+    text-overflow:ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.card_genres_names:hover {
+    overflow: visible;
+    background-color: var(--light-violet);
+    padding: .5rem;
+    position: absolute;
+    left: 20%;
+    border-radius: .25rem;
+}
 .card_icons {
     width: 30%;
     height: 1.25rem;
@@ -94,6 +115,7 @@
     width: 15px;
 }
 .card_description {
+    width: 100%;
     display: none;
 }
 
