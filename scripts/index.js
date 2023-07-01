@@ -2,6 +2,7 @@ import { darkModeListener } from "./darkMode.js";
 import { showSearchInput } from "./showSearchInput.js";
 import { changeColumnViewListener } from "./columns.js";
 import { createGameCards } from "./fetchApi.js";
+import { getGameDetailsAndRender } from "./nuevafuncionfetch.js";
 
 // Dark-mode button
 const switchMode = document.querySelectorAll('.switch');
@@ -26,3 +27,4 @@ colBtn.forEach(changeColumnViewListener)
 
 // fetch api
 createGameCards()
+// getGameDetailsAndRender();
