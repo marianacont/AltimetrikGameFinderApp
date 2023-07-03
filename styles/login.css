@@ -96,7 +96,7 @@ input::placeholder {
     font-size: 0.875rem;
     color: var(--light-gray);
 }
-.invalid {
+.invalid-email, .invalid-password {
     display: none;
     text-align: start;
     color: var(--invalid-red);

@@ -1,5 +1,5 @@
 import { changeEyeIcon } from "./login.js";
-import { validateData } from "./regex.js";
+import { inputsListeners } from "./form.js";
 
 let eye =  document.getElementById('eye');
 const form = document.getElementById('login-form');
@@ -13,8 +13,9 @@ eye.addEventListener('click', (e) => {
     changeEyeIcon();
 });
 
-// Validation with regex
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    validateData();
+// Form Validation
+inputsListeners()
+
+form.addEventListener('click', (e) => {
+    e.preventDefault()
 })

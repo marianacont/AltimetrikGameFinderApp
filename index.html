@@ -29,14 +29,14 @@
             <form id="login-form">
                 <label for="email"></label>
                 <input id="email" class="form-input" type="email" placeholder="Username or email" required>
-                <p class="invalid">Invalid email</p>
+                <p class="invalid-email" >Invalid email</p>
 
                 <label for="pass"></label>
                 <input id="pass" class="form-input" type="password" placeholder="Password" required>
                 
                 <img id="eye" src="assets/icons/eye-off.svg" alt="eye">
 
-                <p class="invalid">Invalid password or email</p>
+                <p class="invalid-password">Invalid password or email</p>
 
                 <div class="flex remember">
                     <div class="flex">
@@ -46,7 +46,7 @@
                     <a href="#">Forgot password?</a>
                 </div>
 
-                <input id="submit-btn" class="form-input" type="submit" value="Log in">
+                <input id="submit-btn" class="form-input" type="submit" value="Log in" formnovalidate>
 
                 <div class="register flex">
                     <p>Not registered yet?</p>
@@ -76,7 +76,5 @@
     </div>
 
     <script src="scripts/login/index.js" type="module"></script>
-   
-
 </body>
 </html>

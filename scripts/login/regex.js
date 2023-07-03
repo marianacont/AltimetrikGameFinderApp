@@ -1,13 +1,8 @@
 const inputEmail = document.getElementById('email');
 const regExpMail = /[._-\w]+@([\w-]+\.)+[\w]+/g
 const inputPass = document.getElementById('pass');
-const regExpPass = /(\w-_!\?.,;:\{\}\(\))+/g // its wrong because I need to test all of the special characters as a group, an also I have to separate the letters with the digits.
+const regExpPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[?!#$%&])[A-Za-z\d?!#$%&]{8,8}$/g
 
-// (?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$
-
-
-// console.log(regExpMail.test('mariana@algo.com.ar'));
-// console.log(regExpMail.test('mariana@algo.com'));
 
 export function validateData(){
     let mail = inputEmail.value;
@@ -18,3 +13,12 @@ export function validateData(){
         inputEmail.setCustomValidity('Wrong email')
     }
 }
+
+ function validatePassword(){
+    let pass = inputPass.value
+    if(regExpPass.test(pass)){
+    } else {
+    }
+};
+validatePassword()
+
