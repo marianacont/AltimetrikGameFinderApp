@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "user@server.com",
+      "password": "Poi?0=98"
+    },
+    {
+      "id": 2,
+      "username": "user-two@server.com",
+      "password": "password2"
+    },
+    {
+      "id": 3,
+      "username": "user-three@server.com",
+      "password": "pa55WO?!"
+    }
+  ]
+}
