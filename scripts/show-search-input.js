@@ -1,8 +1,7 @@
 const searchInput = document.querySelector('.search-input');
-
+const lens = document.querySelector('.lens')
 
 export function showSearchInput() {
-    console.log(searchInput.style);
     if(searchInput.style.display === "" || searchInput.style.display === "none"){
         searchInput.style.display = "inline"; 
         lens.style.position = "absolute";
