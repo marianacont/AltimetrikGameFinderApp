@@ -1,26 +1,24 @@
-.light-bg {
-    background-image: url(../assets/unsplash_jCorhBYp_C4.png);
-}
-
 .login-bg {
+    background-image: url(../assets/unsplash_jCorhBYp_C4.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+    min-height: 100%;
     padding-bottom: 6rem;
 }
-.white-layer {
+.blur-layer {
     background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(5px);
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
 }
-
 
 
 /* header - logo */
 
 #logo {
-    padding-top: 27.84px;
+    padding-block: 27.84px;
     justify-content: center;
 }
 
@@ -65,7 +63,7 @@
 }
 #login-form{
     padding: 0;
-    margin: 0;
+    margin-block: 2rem;
     position: relative;
 }
 .form-input{
@@ -79,10 +77,6 @@
 .form-input:focus{
     outline: none;
 }
-#pass:focus {
-    font-size: 2rem;
-}
-
 
 #submit-btn {
     margin-bottom: 2rem;
@@ -91,6 +85,7 @@
     color: white;
     font-size: 1.125rem;
     font-weight: 700;
+    cursor: pointer;
 }
 input::placeholder {
     font-size: 0.875rem;
@@ -110,7 +105,7 @@ input::placeholder {
     cursor: pointer;
 }
 
-/* #checkbox {
+#checkbox {
     cursor: pointer;
     width: 20px;
     height: 20px;
@@ -119,9 +114,9 @@ input::placeholder {
     border: 2px solid #000;
     border-radius: 20%;
     accent-color: var(--light-violet);
-} */
+}
 
-#checkbox {
+/* #checkbox {
     appearance: none;
     cursor: pointer;
     width: 20px;
@@ -134,7 +129,7 @@ input::placeholder {
 #checkbox:checked{
     background: var(--light-violet) url(../assets/icons/check.svg) no-repeat center;
     background-size:contain;
-}
+} */
 
 
 
@@ -157,6 +152,9 @@ input::placeholder {
     justify-content: center;
     margin-bottom: 1rem;
 }
+.or hr {
+    width: 40%;
+}
 
 .login-social div {
     height: 47px;
@@ -165,6 +163,7 @@ input::placeholder {
     margin-bottom: 1rem;
     padding-left: 25%;
     color: var(--light-violet);
+    cursor: pointer;
 }
 .login-social img{
     height: 20px;
@@ -181,55 +180,26 @@ input::placeholder {
 
 
 
-
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-    .dark-bg {
-        background-image: url(../assets/BG.png);
-        color: white;
-        
-    }
-    .black-layer {
-        background-color: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(5px);
-        height: 100vh;
-    }
-    .game {
-        color: var(--cool-pink);
-    }
-    .archive {
-        color: #e6eff8;
-    }
-    .login-social div {
-        border: var(--white);
-    }
-    #facebook span::before {
-        content: url(../assets/icons/facebook-white.svg);
-    }
-    #twitter span::before {
-        content: url(../assets/icons/twitter-white.svg);
-    }
-    #google span::before {
-        content: url(../assets/icons/google-white.svg);
-    }
-}
-
+/* Media Queries */
+/* Tablet screen */
 
 @media screen and (min-width: 768px) {
-        .white-layer {
+    .blur-layer {
         background-color: transparent;
         backdrop-filter: none;
-        /* padding: 0; */
     }
+    
     #login-main {
         width: 28.875rem;
-        height: 43.875rem;
+        /* height: 43.875rem; */
         border-radius: 0.75rem;
         background-color: rgba(255, 255, 255, 0.7);
         backdrop-filter: blur(5px);
         padding: 3.125rem;
         margin: 4.18rem auto;
+    }
+    #login-form {
+        margin-block: 0;
     }
     #logo {
         padding-top: 3.75rem;
@@ -251,9 +221,10 @@ input::placeholder {
     }
 }
 
+/* Desktop screen */
 @media screen and (min-width: 1440px) {
     .login-bg {
-        height: 100%;
+        height: auto;
     }
     #logo {
         padding-top: 3.125%;

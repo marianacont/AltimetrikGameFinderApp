@@ -1,9 +1,9 @@
-import { changeEyeIcon } from "./login.js";
-import { inputsListeners } from "./form.js";
+import { changeEyeIcon } from "./show-password-eye.js";
+import { submitForm } from "./login.js";
+import { darkModeLogin } from "./dark-mode-login.js";
 
 let eye =  document.getElementById('eye');
 const form = document.getElementById('login-form');
-
 
 
 // LOGIN PAGE
@@ -14,8 +14,11 @@ eye.addEventListener('click', (e) => {
 });
 
 // Form Validation
-inputsListeners()
-
-form.addEventListener('click', (e) => {
+form.addEventListener('submit', (e) => {
     e.preventDefault()
-})
+    submitForm()
+});
+
+
+// Dark mode
+window.addEventListener('load', darkModeLogin)
