@@ -1,0 +1,45 @@
+/* Background */
+.dark-mode .login-bg {
+    background-image: url(../assets/BG.png);
+    color: white;
+}
+.dark-mode .blur-layer {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Logo */
+.dark-mode .game {
+    color: var(--cool-pink);
+}
+.dark-mode .archive {
+    color: #e6eff8;
+}
+
+/* Login */
+.dark-mode .invalid-email, .dark-mode .invalid-password {
+    color: var(--invalid-red);
+}
+.dark-mode .login-social div {
+    color: var(--white);
+    border: solid 2px var(--white);
+}
+.dark-mode #facebook span::before {
+    content: url(../assets/icons/facebook-white.svg);
+}
+.dark-mode #twitter span::before {
+    content: url(../assets/icons/twitter-white.svg);
+}
+.dark-mode #google span::before {
+    content: url(../assets/icons/google-white.svg);
+}
+
+
+@media screen and (min-width: 768px) {
+    .dark-mode .blur-layer {
+        background-color: transparent;
+        backdrop-filter: none;
+    }
+    .dark-mode #login-main {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
