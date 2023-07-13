@@ -92,6 +92,9 @@ aside {
     flex-direction: column;
     gap: .5rem;
 }
+.sections p {
+    cursor: pointer;
+}
 div.sections > .bold{
     font-size: .92rem;
     padding-block: .5rem;
@@ -190,8 +193,16 @@ div.sections > img {
     width: 362px;
     height: 47px;
 }
-
-
+.search-button {
+    border: none;
+    background-color: transparent;
+}
+.search-results h2 {
+    margin-bottom: 2rem;
+}
+.search-results li {
+    margin-left: 2rem;
+}
 
 
 

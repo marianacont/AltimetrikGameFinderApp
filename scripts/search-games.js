@@ -1,10 +1,9 @@
  import { createCard } from "./fetch-api.js";
 
-
-
- let lastSearches;
-let divSearches = document.querySelector('.search-results');
+let lastSearches;
 let ulSearches = document.querySelector('.search-results-ul');
+const searchResults = document.querySelector('.search-results')
+const gallery = document.querySelector('.gallery');
 
 if(localStorage.lastSearches && localStorage.lastSearches != ''){
     lastSearches = JSON.parse(localStorage.lastSearches)
@@ -23,12 +22,11 @@ if(localStorage.lastSearches && localStorage.lastSearches != ''){
 
 
 
-
-
  // search games from API
 const debounce = (func, timeout) => {
     let timer;
     return (...args) => {
+        clearTimeout(timer)
         timer = setTimeout(()=>{
             func(...args);
         }, timeout);
@@ -44,7 +42,6 @@ const debounce = (func, timeout) => {
             .then(res => res.json())
             .then(data =>data.results)
             .then(results => {
-                console.log(results)
                 if(results.length == 0){
                     document.querySelector('.gallery').innerHTML = '<h2>No games found</h2>'
                 } else {
@@ -59,3 +56,13 @@ const debounce = (func, timeout) => {
  }, 1000)
 
     
+//  Last searches list
+// export const createLastSearchedList = () => {
+//     console.log(searchResults)
+//     if(searchResults.classList.contains('hide')){
+//         searchResults.classList.remove('hide');
+//     }else {
+//         console.log('hide')
+//         searchResults.classList.add('hide');
+//     }
+// }

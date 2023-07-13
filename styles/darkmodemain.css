@@ -6,7 +6,8 @@
 .dark-mode p,
 .dark-mode h1,
 .dark-mode h2,
-.dark-mode h3{
+.dark-mode h3,
+.dark-mode li {
     color: #fff;
 }
 .dark-mode h4 {

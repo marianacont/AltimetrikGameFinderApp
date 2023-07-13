@@ -30,10 +30,10 @@
         </div>
     </div>
 
-    <div class="search-bar flex">
-        <img class="lens" src="assets/icons/search.svg" alt="">
+    <form class="search-bar flex">
         <input type="text" name="search-input" class="search-input" placeholder="Search games...">
-    </div>
+        <button type="submit" class="search-button"> <img class="lens" src="assets/icons/search.svg" alt=""></button>
+    </form>
     
     <div class="user-nav">
         <p class="logout">Logout</p>
@@ -66,7 +66,8 @@
     </header>
 
     <main>
-        <div class="search-results">
+        <div class="search-results hide">
+            <h2>Last terms searched</h2>
             <ul class="search-results-ul">
 
             </ul>

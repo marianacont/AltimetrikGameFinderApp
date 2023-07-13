@@ -5,15 +5,15 @@ import { createGameCards } from "./fetch-api.js";
 import { logoutListener } from "./logout.js";
 import { getGameDescription } from "./fetch-api-details.js";
 import { searchGamesWithDebounce } from "./search-games.js";
-import { getGames } from "./new-function.js"
 
 // Dark-mode button
 const switchMode = document.querySelectorAll('.switch');
-// Lens (tablet screen)
 const lens = document.querySelector('.lens');
 const colBtn = document.querySelectorAll("img[class*='col']")
 const logoutBtn = document.querySelectorAll('.logout');
-const searchInput = document.querySelector('.search-input')
+const searchInput = document.querySelector('.search-input');
+const lastSearchesMenuLink = document.getElementById('last-searches');
+const searchResults = document.querySelector('.search-results')
 
 
 
@@ -40,10 +40,19 @@ logoutBtn.forEach(logoutListener)
 //Search games
 searchInput.addEventListener('input', (e) => {
     // e.preventDefault();
-    let value = e.target.value
+    let value = e.target.value.toLowerCase()
     searchGamesWithDebounce(value)
 });
 
-// new functionality
-// getGames()
 
+// Las searches list
+lastSearchesMenuLink.addEventListener('click', () => {
+    console.log(searchResults)
+    
+    if(searchResults.classList.contains('hide')){
+        searchResults.classList.remove('hide');
+    }else {
+        console.log('hide')
+        searchResults.classList.add('hide');
+    }
+});
