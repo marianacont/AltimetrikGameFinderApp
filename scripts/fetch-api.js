@@ -1,28 +1,22 @@
-const apiKey = "076125fe7d0647b6a94e0263bcf57f86";
+const apiKey = "7a29cc5de6ab485491bdb04ccd264f92";
 const url = `https://rawg.io/api/games?key=${apiKey}`
 let gallery = document.querySelector(".gallery");
 
-
-export function createGameCards(){
+export const createGameCards = () => {  
+  
   // fetch API
   fetch(url)
         .then(res => res.json())
-        .then(data => orderByRating(data.results))
+        .then(data => data.results)
+        .then(results => createCard(results))
         .catch(error => console.error('Error:', error));
 
-
-    // Rating orden
-    function orderByRating(games){
-        let ordered =  games.sort((a,b) => b.rating - a.rating);
-        createCard(ordered);
-}
-
+};
   // Create card
-function createCard(games){
+ export const createCard = (games) => {
     let card = ''
 
     games.map(async game =>{
-
         // Get genres from each game
         let genres = game.genres.map(genre => {
             let genreList =  genre.name
@@ -32,18 +26,10 @@ function createCard(games){
         // Get platforms from each game
         let platforms = game.parent_platforms.map(platform => `<img src="../assets/icons/${platform.platform.slug}.svg" alt="${platform.platform.name}">`).join('');
 
-        // Get description from each game -- ERROR --
-        const showDescription = () => {
-            fetch(`https://rawg.io/api/games/${game.id}?key=${apiKey}`)
-                .then(res => res.json())
-                .then(data => data.description)
-                .then(description => description)
-        }
-        let description = console.log(showDescription())
         
         // Create card with all the information
             card +=  `
-            <div class="card">
+            <div class="card" id="${game.id}">
                 <div class="card_image" style="background-image: url(${game.background_image})"></div>
                 <div class="card_content">
                     <div class="flex">
@@ -66,7 +52,7 @@ function createCard(games){
                     </div>
 
                     <p class="card_description">
-                      ${description}
+                      
                     </p>
 
                 </div>
@@ -74,5 +60,4 @@ function createCard(games){
 
            gallery.innerHTML = card        
     });   
-};
 };
