@@ -3,9 +3,10 @@
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 @import url(login.css);
-@import url(main.css);
+@import url(gallery.css);
 @import url(menu.css);
-@import url(mainDarkMode.css);
+@import url(darkmodemain.css);
+@import url(darkmodelogin.css);
 
 
 

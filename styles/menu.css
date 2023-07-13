@@ -175,6 +175,7 @@ div.sections > img {
 }
 .logout {
     padding-block: 1rem;
+    cursor: pointer;
 }
 
 .user-nav {

@@ -115,10 +115,13 @@
     width: 15px;
 }
 .card_description {
-    width: 100%;
+    width: 617px;
     display: none;
+    height: 76px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
 }
-
 
 
 
@@ -189,6 +192,12 @@
     .one-column .card_description {
         display: block;
     }
+
+
+    /* Search */
+.hide {
+    display: none;
+}
 
 
 @media screen and (min-width: 1440px) {
