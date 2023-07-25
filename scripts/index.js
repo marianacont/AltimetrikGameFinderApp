@@ -14,7 +14,7 @@ const logoutBtn = document.querySelectorAll('.logout');
 const searchInput = document.querySelector('.search-input');
 const lastSearchesMenuLink = document.getElementById('last-searches');
 const searchResults = document.querySelector('.search-results')
-
+const homeLink = document.querySelector('#home-link')
 
 
 // Dark/light mode functionality
@@ -31,6 +31,10 @@ colBtn.forEach(changeColumnViewListener)
 // fetch api
 createGameCards()
 getGameDescription()
+homeLink.addEventListener('click', () => {
+    createGameCards() 
+    getGameDescription()
+})
 
 
 // Logout
@@ -40,17 +44,23 @@ logoutBtn.forEach(logoutListener)
 searchInput.addEventListener('input', (e) => {
     e.preventDefault();
     let value = e.target.value.toLowerCase()
-    if(value != ' '){searchGamesWithDebounce(value)}
-    
-});
-
-
-// Las searches list
-lastSearchesMenuLink.addEventListener('click', () => {    
-    if(searchResults.classList.contains('hide')){
-        searchResults.classList.remove('hide');
+    if(value.trim() === ''){
+        console.log(`${value} is an empty string` );
+        
     }else {
-        searchResults.classList.add('hide');
+        console.log('I will call the function');
+        searchGamesWithDebounce(value)
     }
+
 });
+
+
+// Last searches list
+// lastSearchesMenuLink.addEventListener('click', () => {    
+//     if(searchResults.classList.contains('hide')){
+//         searchResults.classList.remove('hide');
+//     }else {
+//         searchResults.classList.add('hide');
+//     }
+// });
 

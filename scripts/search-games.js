@@ -1,26 +1,13 @@
  import { createCard } from "./fetch-api.js";
+// import { ulSearches } from "./create-search-list.js";
 
 let lastSearches;
-let ulSearches = document.querySelector('.search-results-ul');
-const searchResults = document.querySelector('.search-results')
-const gallery = document.querySelector('.gallery');
 
-if(localStorage.lastSearches && localStorage.lastSearches != ''){
-    lastSearches = JSON.parse(localStorage.lastSearches)
-}else {
-    lastSearches = []
-};
- const makeListOfSearches = (term, parent) => {
-    let listSearches = document.createElement('li');
-    listSearches.textContent = term;
-    parent.appendChild(listSearches);
- };
-
- lastSearches.forEach(term => {
-    makeListOfSearches(term, ulSearches)
- });
-
-
+    if(localStorage.lastSearches && localStorage.lastSearches != ''){
+        lastSearches = JSON.parse(localStorage.lastSearches)
+    }else {
+        lastSearches = []
+    };
 
  // search games from API
 const debounce = (func, timeout) => {
@@ -49,14 +36,12 @@ const debounce = (func, timeout) => {
                     if(lastSearches.length >= 10){
                         lastSearches.pop()
                     }
-                    
-                    makeListOfSearches(searchTerm, ulSearches)
                     localStorage.lastSearches = JSON.stringify(lastSearches)
                 }
             })
             .catch(err => console.error(err))
             
- }, 500)
+ }, 700)
 
     
 
