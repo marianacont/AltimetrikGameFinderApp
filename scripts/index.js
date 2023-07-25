@@ -25,7 +25,6 @@ windowListener()
 lens.addEventListener('click', showSearchInput);
 
 // Change columns view
-// colBtn.forEach(changeColumnViewListener);
 colBtn.forEach(changeColumnViewListener)
 
 
@@ -39,20 +38,19 @@ logoutBtn.forEach(logoutListener)
 
 //Search games
 searchInput.addEventListener('input', (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     let value = e.target.value.toLowerCase()
-    searchGamesWithDebounce(value)
+    if(value != ' '){searchGamesWithDebounce(value)}
+    
 });
 
 
 // Las searches list
-lastSearchesMenuLink.addEventListener('click', () => {
-    console.log(searchResults)
-    
+lastSearchesMenuLink.addEventListener('click', () => {    
     if(searchResults.classList.contains('hide')){
         searchResults.classList.remove('hide');
     }else {
-        console.log('hide')
         searchResults.classList.add('hide');
     }
 });
+

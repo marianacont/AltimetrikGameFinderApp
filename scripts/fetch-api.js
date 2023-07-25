@@ -1,5 +1,6 @@
+let pageNumber = 1;
 const apiKey = "7a29cc5de6ab485491bdb04ccd264f92";
-const url = `https://rawg.io/api/games?key=${apiKey}`
+const url = `https://rawg.io/api/games?key=${apiKey}&page=${pageNumber}`
 let gallery = document.querySelector(".gallery");
 
 export const createGameCards = () => {  
@@ -61,3 +62,13 @@ export const createGameCards = () => {
            gallery.innerHTML = card        
     });   
 };
+
+//Infinite scrolling
+window.addEventListener('scroll', (e) => {
+    const { scrollTop, clientHeight, scrollHeight } = document.documentElement
+    if(scrollTop + clientHeight >= scrollHeight){
+        console.log('cargar más');
+        pageNumber++
+        createGameCards()
+    }
+})

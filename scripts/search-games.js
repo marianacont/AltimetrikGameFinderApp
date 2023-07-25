@@ -36,8 +36,7 @@ const debounce = (func, timeout) => {
  export const searchGamesWithDebounce = debounce((searchTerm) => {
         const apiKey = "7a29cc5de6ab485491bdb04ccd264f92";
         const url = `https://rawg.io/api/games?key=${apiKey}&search="${searchTerm}"`
-        console.log(searchTerm)
-        
+
         fetch(url)
             .then(res => res.json())
             .then(data =>data.results)
@@ -46,23 +45,18 @@ const debounce = (func, timeout) => {
                     document.querySelector('.gallery').innerHTML = '<h2>No games found</h2>'
                 } else {
                     createCard(results)
-                    lastSearches.push(searchTerm);
+                    lastSearches.unshift(searchTerm);
+                    if(lastSearches.length >= 10){
+                        lastSearches.pop()
+                    }
+                    
                     makeListOfSearches(searchTerm, ulSearches)
                     localStorage.lastSearches = JSON.stringify(lastSearches)
                 }
             })
             .catch(err => console.error(err))
             
- }, 1000)
+ }, 500)
 
     
-//  Last searches list
-// export const createLastSearchedList = () => {
-//     console.log(searchResults)
-//     if(searchResults.classList.contains('hide')){
-//         searchResults.classList.remove('hide');
-//     }else {
-//         console.log('hide')
-//         searchResults.classList.add('hide');
-//     }
-// }
+
