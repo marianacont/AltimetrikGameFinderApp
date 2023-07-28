@@ -50,24 +50,14 @@
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
-    /* grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-            "title number"
-            "realease date"
-            "genres genresnames"
-            "icons icons"; */
     gap: .5rem;
 }
-.card_content div:nth-child(1){
+.card_header,
+.card_content .info{
     width: 100%;
     justify-content: space-between;
 }
-.card_content div:nth-child(2){
-    width: 70%;
-}
-.card_content div:nth-child(3){
-    width: 70%;
-}
+
 .card_title {
     font-size: 1.5rem;
     font-weight: 700;
@@ -103,9 +93,9 @@
     border-radius: .25rem;
 }
 .card_icons {
-    width: 30%;
+    width: 100%;
     height: 1.25rem;
-    padding-top: .5rem;
+    padding-top: .7rem;
     font-size: .5rem;
     flex-wrap: wrap;
     gap: .25rem;
@@ -166,7 +156,13 @@
         position: absolute;
         top: 3rem;
         right: 1rem;
+        width: 30%;
     }
+    .card_content .info{
+        width: 70%;
+        justify-content: start;
+        gap: 1rem;
+}
 }
 
     /* One-column gallery design */
@@ -179,16 +175,6 @@
     .one-column .card_image {
         height: 20rem;
     }
-    /* .one-column .card_content {
-        row-gap: 2rem;
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        grid-template-areas: 
-                "title title title title title title number"
-                "realease date genres genresnames . . icons"
-                "desc desc desc desc desc desc desc";
-        gap: .5rem;
-    } */
     .one-column .card_description {
         display: block;
     }

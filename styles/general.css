@@ -8,6 +8,7 @@
 @import url(darkmodemain.css);
 @import url(darkmodelogin.css);
 @import url(modal.css);
+@import url(onecard.css);
 
 
 /* Variables */
@@ -84,8 +85,16 @@ a {
     text-decoration: none;
 }
 
+li {
+    list-style: none;
+}
+
 .bold {
     font-weight: 700;
+}
+
+.hide {
+    display: none;
 }
 
 .flex{
