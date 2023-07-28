@@ -29,10 +29,10 @@ colBtn.forEach(changeColumnViewListener)
 
 
 // fetch api
-createGameCards()
+createGameCards(1)
 getGameDescription()
 homeLink.addEventListener('click', () => {
-    createGameCards() 
+    createGameCards(1) 
     getGameDescription()
 })
 
@@ -51,16 +51,6 @@ searchInput.addEventListener('input', (e) => {
         console.log('I will call the function');
         searchGamesWithDebounce(value)
     }
-
 });
 
-
-// Last searches list
-// lastSearchesMenuLink.addEventListener('click', () => {    
-//     if(searchResults.classList.contains('hide')){
-//         searchResults.classList.remove('hide');
-//     }else {
-//         searchResults.classList.add('hide');
-//     }
-// });
 

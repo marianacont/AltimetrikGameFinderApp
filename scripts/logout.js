@@ -1,4 +1,4 @@
-const modal = document.getElementById('modal');
+const modal = document.getElementById('logout-modal');
 const btnYes = document.getElementById('btn-yes');
 const btnNo = document.getElementById('btn-no');
 const btnClose = document.querySelector('.close');
