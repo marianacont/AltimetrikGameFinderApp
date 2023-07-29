@@ -1,7 +1,8 @@
  import { createCard } from "./fetch-api.js";
-// import { ulSearches } from "./create-search-list.js";
 
 let lastSearches;
+let pageNumber = 1
+
 
     if(localStorage.lastSearches && localStorage.lastSearches != ''){
         lastSearches = JSON.parse(localStorage.lastSearches)
@@ -20,9 +21,9 @@ const debounce = (func, timeout) => {
     };
  };
 
- export const searchGamesWithDebounce = debounce((searchTerm) => {
-        const apiKey = "7a29cc5de6ab485491bdb04ccd264f92";
-        const url = `https://rawg.io/api/games?key=${apiKey}&search="${searchTerm}"`
+ export const searchGamesWithDebounce = debounce((searchTerm, pageNumber) => {
+        const apiKey = "b42d30de36764aaf933ab77eeea3f2a6";
+        const url = `https://rawg.io/api/games?key=${apiKey}&search="${searchTerm}"&page=${pageNumber}`
 
         fetch(url)
             .then(res => res.json())
@@ -31,6 +32,7 @@ const debounce = (func, timeout) => {
                 if(results.length == 0){
                     document.querySelector('.gallery').innerHTML = '<h2>No games found</h2>'
                 } else {
+                    document.querySelector('.gallery').innerHTML = ''
                     createCard(results)
                     lastSearches.unshift(searchTerm);
                     if(lastSearches.length >= 10){

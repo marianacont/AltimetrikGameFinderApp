@@ -1,4 +1,5 @@
 import { createModalCard } from "./one-card-game.js";
+import { searchGamesWithDebounce } from "./search-games.js";
 
 let gallery = document.querySelector(".gallery");
 let pageNumber = 1
@@ -18,6 +19,7 @@ export const createGameCards = (pageNumber) => {
 // Create card
  export const createCard = (games) => {
     let card = ''
+    console.log(games)
 
     games.map(game =>{
         // Get genres from each game
@@ -85,15 +87,21 @@ export const createGameCards = (pageNumber) => {
     gallery.insertAdjacentHTML('beforeend', card);
 
     // Card modal
-createModalCard()
+    createModalCard()
 
 };
 
 //Infinite scrolling
 window.addEventListener('scroll', (e) => {
     const { scrollTop, clientHeight, scrollHeight } = document.documentElement
+    let input = document.querySelector('.search-input')
     if(scrollTop + clientHeight >= scrollHeight ){
         pageNumber++
-        createGameCards(pageNumber)
+        if(input === ''){
+            createGameCards(pageNumber)
+        }else {
+            searchGamesWithDebounce(input.value, pageNumber)
+        }
+        
     }
 });

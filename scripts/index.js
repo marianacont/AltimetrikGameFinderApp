@@ -49,7 +49,7 @@ searchInput.addEventListener('input', (e) => {
         
     }else {
         console.log('I will call the function');
-        searchGamesWithDebounce(value)
+        searchGamesWithDebounce(value, 1)
     }
 });
 
