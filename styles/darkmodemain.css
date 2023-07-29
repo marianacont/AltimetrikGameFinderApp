@@ -42,10 +42,19 @@
 
 .dark-mode #menu {
     background-color: #151515;
+    color: var(--white);
 }
 .dark-mode .divisor {
     border: solid 1px #515151;
 }
 .dark-mode .btn-close {
     fill: #fff;
+}
+
+.dark-mode #menu a {
+    color: var(--white);
+}
+
+.dark-mode #menu a:hover {
+    color: var(--light-violet);
 }

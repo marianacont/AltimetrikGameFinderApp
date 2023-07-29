@@ -100,6 +100,10 @@ div.sections > .bold{
     padding-block: .5rem;
 }
 
+#menu a:hover {
+    color: var(--light-violet);
+}
+
 div.sections > .active {
     color: var(--light-violet);
 }
