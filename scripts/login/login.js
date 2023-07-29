@@ -6,28 +6,30 @@ const invalidPassword = document.querySelector('.invalid-password');
 
 // Function that find a match within the value of the input and the users
 const findUser = async () => {
-    let mail = inputEmail.value;
-    let pass = inputPass.value;
-    try {
-        let res = await fetch("http://localhost:3000/users"),
-        users = await res.json();
-        let match = null
-        users.forEach(user => {
-            if(user.username === mail && user.password === pass) {
-                match = user  
-                localStorage.setItem("user", user.username);
-            }
-        });
-        if (match){
-            window.location.href = 'main.html'
-        } else {
-            invalidPassword.style.display = 'block';
-            invalidPassword.innerText = 'Wrong email or password'
-        }
-    } catch (err) {
-        let message = err.statusText;
-    };
-};
+
+    let data = {
+        "email": inputEmail.value,
+        "password": inputPass.value
+    }
+
+    fetch("http://localhost:3000/login", {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {"Content-type": "application/json; charset=UTF-8"}
+    })
+    .then(res => res.json())
+    .then(user => {
+        console.log(user.accessToken)
+        localStorage.setItem('user', user.accessToken)
+        window.location.href = 'games.html'
+    })
+    .catch(err => {
+        err.statusText
+        invalidPassword.style.display = 'block';
+        invalidPassword.innerText = 'Wrong email or password'
+    })
+
+}
 
 export const submitForm = () =>{
     if (inputEmail.value === ''){

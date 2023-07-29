@@ -1,19 +1,14 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "user@server.com",
-      "password": "Poi?0=98"
+      "email": "user@server.com",
+      "password": "$2a$10$FgAeWi1nVvtAmHjV834miO.VyAV6qcKi1mp6W3oARIM.BUjlX/Bx6",
+      "id": 1
     },
     {
-      "id": 2,
-      "username": "user-two@server.com",
-      "password": "password2"
-    },
-    {
-      "id": 3,
-      "username": "user-three@server.com",
-      "password": "pa55WO?!"
+      "email": "user2@server.com",
+      "password": "$2a$10$SNRGmG0Z7skbeSByGZpXzOk.1/UibTGp3TZtVLDfwsxZVpJbFRnl2",
+      "id": 2
     }
   ]
 }
