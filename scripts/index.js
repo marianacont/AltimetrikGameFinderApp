@@ -5,8 +5,9 @@ import { createGameCards } from "./fetch-api.js";
 import { logoutListener } from "./logout.js";
 import { getGameDescription } from "./fetch-api-details.js";
 import { searchGamesWithDebounce } from "./search-games.js";
+import { makeListOfSearches, gallery } from "./create-search-list.js";
 
-// Dark-mode button
+
 const switchMode = document.querySelectorAll('.switch');
 const lens = document.querySelector('.lens');
 const colBtn = document.querySelectorAll("img[class*='col']")
@@ -14,7 +15,14 @@ const logoutBtn = document.querySelectorAll('.logout');
 const searchInput = document.querySelector('.search-input');
 const lastSearchesMenuLink = document.getElementById('last-searches');
 const searchResults = document.querySelector('.search-results')
-const homeLink = document.querySelector('#home-link')
+const homeLink = document.querySelector('#home-link');
+
+window.addEventListener('load', () => {
+    const isUser = localStorage.getItem('user')
+    if(isUser == null){
+        window.location.href = 'index.html'
+    }
+})
 
 
 // Dark/light mode functionality
@@ -32,6 +40,7 @@ colBtn.forEach(changeColumnViewListener)
 createGameCards(1)
 getGameDescription()
 homeLink.addEventListener('click', () => {
+    gallery.innerHTML = ''
     createGameCards(1) 
     getGameDescription()
 })
@@ -49,8 +58,12 @@ searchInput.addEventListener('input', (e) => {
         
     }else {
         console.log('I will call the function');
-        searchGamesWithDebounce(value, 1)
+        searchGamesWithDebounce(value)
     }
 });
 
-
+// Last searches
+lastSearchesMenuLink.addEventListener('click',  (e) => {
+    e.preventDefault()
+    makeListOfSearches()
+})

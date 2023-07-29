@@ -1,6 +1,7 @@
 .main_background {
     background-color: #e5e5e5;
     padding-bottom: 4rem;
+    min-height: 100vh;
 }
 
 
@@ -189,6 +190,7 @@
         grid-template-areas: 
                 'mainheader mainheader mainheader'
                 'mainmenu gallery gallery';
+        grid-auto-rows: max-content;
     }
     .main_header {
         grid-area: mainheader;
