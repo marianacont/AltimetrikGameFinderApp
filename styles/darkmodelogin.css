@@ -23,14 +23,8 @@
     color: var(--white);
     border: solid 2px var(--white);
 }
-.dark-mode #facebook span::before {
-    content: url(../assets/icons/facebook-white.svg);
-}
-.dark-mode #twitter span::before {
-    content: url(../assets/icons/twitter-white.svg);
-}
-.dark-mode #google span::before {
-    content: url(../assets/icons/google-white.svg);
+.dark-mode  svg path {
+    fill: var(--white);
 }
 
 

@@ -156,18 +156,10 @@ input::placeholder {
     color: var(--light-violet);
     cursor: pointer;
 }
-.login-social img{
+.login-social svg{
     height: 20px;
 }
-#facebook span::before {
-    content: url(../assets/icons/facebook-violet.svg);
-}
-#twitter span::before {
-    content: url(../assets/icons/twitter-violet.svg);
-}
-#google span::before {
-    content: url(../assets/icons/google-violet.svg);
-}
+
 
 
 
