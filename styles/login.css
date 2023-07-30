@@ -156,9 +156,6 @@ input::placeholder {
     color: var(--light-violet);
     cursor: pointer;
 }
-.login-social svg{
-    height: 20px;
-}
 
 
 
