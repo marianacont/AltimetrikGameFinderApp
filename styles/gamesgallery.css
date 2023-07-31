@@ -33,6 +33,7 @@
     border-radius: .75rem;
     overflow: hidden;
     box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+    cursor: pointer;
 }
 .card_image {
     background: url(../assets/Biomutant-screenshots-gallery-08-24-2017-1.png) no-repeat;
