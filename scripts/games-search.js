@@ -1,4 +1,4 @@
- import { createCard, apiKey } from "./fetch-api.js";
+ import { createCard, apiKey } from "./games-fetch.js";
  import { gallery } from "./create-search-list.js";
 
 let lastSearches;

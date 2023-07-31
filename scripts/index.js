@@ -1,12 +1,11 @@
 import { darkModeListener, windowListener } from "./dark-mode.js";
 import { showSearchInput } from "./show-search-input.js";
 import { changeColumnViewListener } from "./columns.js";
-import { createGameCards } from "./fetch-api.js";
+import { createGameCards } from "./games-fetch.js";
 import { logoutListener } from "./logout.js";
-import { getGameDescription } from "./fetch-api-details.js";
-import { searchGamesWithDebounce } from "./search-games.js";
+import { getGameDescription } from "./games-fetch-details.js";
+import { searchGamesWithDebounce } from "./games-search.js";
 import { makeListOfSearches, gallery } from "./create-search-list.js";
-
 
 const switchMode = document.querySelectorAll('.switch');
 const lens = document.querySelector('.lens');
@@ -14,7 +13,6 @@ const colBtn = document.querySelectorAll("img[class*='col']")
 const logoutBtn = document.querySelectorAll('.logout');
 const searchInput = document.querySelector('.search-input');
 const lastSearchesMenuLink = document.getElementById('last-searches');
-const searchResults = document.querySelector('.search-results')
 const homeLink = document.querySelector('#home-link');
 
 window.addEventListener('load', () => {
@@ -67,3 +65,5 @@ lastSearchesMenuLink.addEventListener('click',  (e) => {
     e.preventDefault()
     makeListOfSearches()
 })
+
+

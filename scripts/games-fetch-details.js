@@ -1,10 +1,8 @@
-
-
+import { apiKey } from "./games-fetch.js";
+import { GAMES } from "./games-fetch.js";
 
 export const getGameDescription = () => {
-  const apiKey = 'b42d30de36764aaf933ab77eeea3f2a6'; 
   const url = `https://rawg.io/api/games?key=${apiKey}`;
-
 
   fetch(url)
     .then(res => res.json())
@@ -31,9 +29,15 @@ export const getGameDescription = () => {
                 const p = card.querySelector('.card_description')
                 const descriptionParagraph = game.description
                 p.innerHTML = descriptionParagraph
-
             };
         };
+        
+        GAMES.forEach(gameObject => {
+            gameObject.description = game.description
+            gameObject.developers = game.developers
+            gameObject.publishers = game.publishers
+            gameObject.website = game.website
+        })
         
     };
 

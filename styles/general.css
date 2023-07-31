@@ -3,12 +3,12 @@
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 @import url(login.css);
-@import url(gallery.css);
+@import url(gamesgallery.css);
 @import url(menu.css);
 @import url(darkmodemain.css);
 @import url(darkmodelogin.css);
 @import url(modal.css);
-@import url(onecard.css);
+@import url(gamesmodal.css);
 
 
 /* Variables */
@@ -53,32 +53,33 @@
 h1 {
     font-size: max(1.75rem, 3.33vw);
     font-weight: 800;
-    /* line-height: 52.22px; */
+    line-height: 108.8%;
 }
 h2 {
     font-size: 2rem;
     font-weight: 700;
-    line-height: 34.82px;
+    line-height: 108.8%;
 }
 h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    line-height: 26.11px;
+    line-height: 108.8%;
 }
 h4 {
     font-size: max(0.875rem, 1.25vw);
+    line-height: 108.8%;
 }
 h5 {
     font-size: 1rem;
-    line-height: 20.8px;
+    line-height: 130%;
 }
 h6 {
     font-size: 0.875rem;
-    line-height: 18.2px;
+    line-height: 130%;
 }
 p {
     font-size: .875rem;
-    line-height: 15.23px;
+    line-height: 130%;
 }
 
 a {
