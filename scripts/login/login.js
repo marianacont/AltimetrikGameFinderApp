@@ -45,20 +45,15 @@ const findUser = async () => {
 
         if (response.ok) {
             const user = await response.json();
-            // Realizar acciones con el usuario obtenido si es necesario
-            console.log(user);
             localStorage.setItem('user', user.accessToken);
             window.location.href = 'games.html';
         } else if (response.status === 400) {
-            // El servidor respondió con un código 400 (Bad Request)
             invalidPassword.style.display = 'block';
             invalidPassword.innerText = 'Wrong email or password';
         } else {
-            // Otros códigos de respuesta inesperados
             console.error("Unexpected response status:", response.status);
         }
     } catch (error) {
-        // Error de red u otras excepciones
         console.error("Error occurred:", error);
     }
 }
