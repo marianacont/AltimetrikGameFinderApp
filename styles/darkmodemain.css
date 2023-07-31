@@ -25,6 +25,9 @@
 .dark-mode p.card_number {
     color: var(--light-violet);
 }
+.dark-mode .card_icons svg {
+    fill: var(--white);
+}
 
 /* Logo colors */
 .dark-mode #logo-main .game {

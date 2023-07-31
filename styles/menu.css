@@ -21,7 +21,7 @@
       color: var(--super-violet);
       text-transform: uppercase;
       font-size: 1.23rem;
-      line-height: 1.33rem;
+      /* line-height: 1.33rem; */
       margin: 0;
   }
   

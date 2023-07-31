@@ -33,14 +33,14 @@
     color: var(--super-violet);
     text-transform: uppercase;
     font-size: 2.375rem;
-    line-height: 41.46px;
+    line-height: 109%;
     margin: 0;
 }
 
 .archive {
     color: #414141;
     font-size: 1rem;
-    line-height: 17.07px;
+    line-height: 106.6%;
     letter-spacing: 6.72px;
     text-transform: uppercase;
     margin: 0;
@@ -54,7 +54,7 @@
 }
 #login-main h1 {
     font-size: 1.25rem;
-    line-height: 21.76px;
+    line-height: 108.8%;
     font-weight: 700;
 }
 #login-main p {
@@ -191,13 +191,11 @@ input::placeholder {
     }
     .game {
         font-size: 2.75rem;
-        line-height: 47.47px;
     }
     
     .archive {
         font-size: 1.125rem;
-        line-height: 19.54px;
-        /* letter-spacing: 7.7px; */
+        letter-spacing: 7.7px;
     }
 }
 
@@ -217,12 +215,10 @@ input::placeholder {
     }
     .game {
         font-size: 2.125rem;
-        line-height: 36.99px;
     }
     
     .archive {
         font-size: .875rem;
-        line-height: 15.23px;
         letter-spacing: 6px;
     }
     #login-main {
