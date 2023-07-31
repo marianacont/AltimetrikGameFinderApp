@@ -19,7 +19,6 @@ const findUser = async () => {
     })
     .then(res => res.json())
     .then(user => {
-        console.log(user.accessToken)
         localStorage.setItem('user', user.accessToken)
         window.location.href = 'games.html'
     })

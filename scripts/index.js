@@ -55,7 +55,6 @@ searchInput.addEventListener('input', (e) => {
         console.log(`${value} is an empty string` );
         
     }else {
-        console.log('I will call the function');
         searchGamesWithDebounce(value)
     }
 });

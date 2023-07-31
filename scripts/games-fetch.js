@@ -1,7 +1,7 @@
 import { createModalCard } from "./game-card-modal.js";
 import { searchGamesWithDebounce } from "./games-search.js";
 
-export const apiKey = "6f37d84080c84909b71b53bf66ce4fc9";
+export const apiKey = "fba17e9f91664885a6cfafa88948a796";
 let gallery = document.querySelector(".gallery");
 let pageNumber = 1
 export let GAMES = []

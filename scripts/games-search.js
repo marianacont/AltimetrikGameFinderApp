@@ -34,7 +34,6 @@ const debounce = (func, timeout) => {
                     createCard(results)
                     if(searchTerm.length >=2){
                         lastSearches.unshift(searchTerm);
-                    console.log(searchTerm, lastSearches);
                     }
                     
                     if(lastSearches.length >= 11){

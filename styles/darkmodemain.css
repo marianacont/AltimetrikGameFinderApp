@@ -61,3 +61,12 @@
 .dark-mode #menu a:hover {
     color: var(--light-violet);
 }
+
+/* Modal */
+.dark-mode .card_modal .modal_container {
+    background-color: #000;
+}
+
+.dark-mode .card_modal .gradient_layer {
+    background: linear-gradient( #00000000, #000 80%);
+}
