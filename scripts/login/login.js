@@ -59,6 +59,7 @@ const findUser = async () => {
 }
 
 
+
 export const submitForm = () =>{
     if (inputEmail.value === ''){
         invalidEmail.style.display = 'block';

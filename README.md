@@ -72,18 +72,27 @@ This projects is still ongoing. Much of it still needs to be developed. Sorry if
     - Login with social media
     - Remember-me funcionality
     - Forgot password functionality
+    - Fix password icon's position
 * Games section
+    - Add error message when fetch doesn't work
     - Genres hover effect
     - Favorite heart
     - Styled platforms icons
+    - Fix infinite scrolling
+        - Check if the user is doing a search
+        - Game's number should increase and not restart
+        - Modal card is not working with new cards (async problem)
+    - Change date style
 * Search
     - Search terms suggestion
-    - Last searches cards
+    - Delete last searches list
+    - Search by categories
 * Modal card design
     - Dark mode design
     - Read more functionality and design
     - Images and video pop-up
     - Close modal clicking outside it
+    - Fix close button functionality
 
 Please, let me know in a comment if you find something else to fix.
 
@@ -92,4 +101,5 @@ Please, let me know in a comment if you find something else to fix.
 * Favorites games
 * Navigate for categories, realese date and rating
 * View reviews
+* Last searches cards
 * ... and more

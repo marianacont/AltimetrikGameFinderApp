@@ -35,29 +35,29 @@ colBtn.forEach(changeColumnViewListener)
 
 
 // fetch api
-createGameCards(1)
-getGameDescription()
-homeLink.addEventListener('click', () => {
-    gallery.innerHTML = ''
-    createGameCards(1) 
-    getGameDescription()
-})
+// createGameCards(1)
+// getGameDescription()
+// homeLink.addEventListener('click', () => {
+//     gallery.innerHTML = ''
+//     createGameCards(1) 
+//     getGameDescription()
+// })
 
 
 // Logout
 logoutBtn.forEach(logoutListener)
 
 //Search games
-searchInput.addEventListener('input', (e) => {
-    e.preventDefault();
-    let value = e.target.value.toLowerCase()
-    if(value.trim() === ''){
-        console.log(`${value} is an empty string` );
+// searchInput.addEventListener('input', (e) => {
+//     e.preventDefault();
+//     let value = e.target.value.toLowerCase()
+//     if(value.trim() === ''){
+//         console.log(`${value} is an empty string` );
         
-    }else {
-        searchGamesWithDebounce(value)
-    }
-});
+//     }else {
+//         searchGamesWithDebounce(value)
+//     }
+// });
 
 // Last searches
 lastSearchesMenuLink.addEventListener('click',  (e) => {
