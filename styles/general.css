@@ -103,6 +103,13 @@ li {
     gap: 10px;
     align-items: center;
 }
+.grid {
+    display: grid;
+    gap: 10px;
+}
+.block {
+    display: block;
+}
 
 .btn {
     margin-bottom: 2rem;

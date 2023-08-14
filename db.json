@@ -9,6 +9,11 @@
       "email": "user2@server.com",
       "password": "$2a$10$SNRGmG0Z7skbeSByGZpXzOk.1/UibTGp3TZtVLDfwsxZVpJbFRnl2",
       "id": 2
+    },
+    {
+      "email": "user-three@server.com",
+      "password": "$2a$10$wPVbx5Be4E27Ai2wS6VRS.EWL4RRqXHvPM8WWYxo7QQK2elpPJ3R.",
+      "id": 3
     }
   ]
 }

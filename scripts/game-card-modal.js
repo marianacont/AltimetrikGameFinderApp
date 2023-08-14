@@ -29,6 +29,10 @@ export const createModalCard = (games, cards) => {
                 const gameId = game.id;
                 
                 if(gameId == card.id){
+                    let modalExist = document.getElementById(`${game.slug}`);
+                if(modalExist){
+                    modalExist.classList.add('active')
+                }else {
                     let platform_list = game.platforms.map(platform => platform.platform.name).join(', ');
                     let publishers = game.publishers.map(publisher => publisher.name).join(', ');
                     let developer = game.developers.map(developer => developer.name).join(', ');
@@ -126,10 +130,10 @@ export const createModalCard = (games, cards) => {
             
                         </div>
                     </div>
-                </div>`
+                    </div>`
 
                     gallery.insertAdjacentHTML('beforeend', modalCard);
-
+                }
                     const closeBtn = document.querySelector(`#${game.slug} .card_close`)
                     const openCard = document.querySelector(`#${game.slug}`)
                     closeBtn.addEventListener('click', () => {

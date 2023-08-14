@@ -1,26 +1,37 @@
 import { createModalCard } from "./game-card-modal.js";
+import { getGameDescription } from "./games-fetch-details.js";
 import { searchGamesWithDebounce } from "./games-search.js";
 
 export const apiKey = "fba17e9f91664885a6cfafa88948a796";
 let gallery = document.querySelector(".gallery");
 let pageNumber = 1
-export let GAMES = []
+export const GAMES = []
 
 export const createGameCards = (pageNumber) => {
-    const url = `https://rawg.io/api/games?key=${apiKey}&page=${pageNumber}`
+    const url = `https://rawg.io/api/games?key=${apiKey}&page=${pageNumber}&page_size=10`
 
   // fetch API
   fetch(url)
-        .then(res => res.json())
+        .then(response => {
+            if(response.ok){
+                return response.json()
+            }else if(!response.ok){
+                console.log(response.status)
+                gallery.innerHTML = `<h2>Sorry!</h2>
+                                    <br>
+                                    <h3>An error has ocurred</h3>`
+                gallery.classList.add('block')
+            }
+        })
         .then(data => data.results)
         .then(results => createCard(results))
         .catch(error => console.error('Error:', error));
 };
 
+
 // Create card
  export const createCard = (games) => {
     let card = ''
-
     games.map(game =>{
         // Get genres from each game
         let genres = game.genres.map(genre => {
@@ -84,20 +95,7 @@ export const createGameCards = (pageNumber) => {
     gallery.insertAdjacentHTML('beforeend', card);
     let cardsArray = document.querySelectorAll('.card'); 
     createModalCard(GAMES, cardsArray)
-
+    getGameDescription(GAMES, apiKey)
 };
 
 
-//Infinite scrolling
-window.addEventListener('scroll', (e) => {
-    const { scrollTop, clientHeight, scrollHeight } = document.documentElement
-    let input = document.querySelector('.search-input')
-    if(scrollTop + clientHeight >= scrollHeight ){
-        pageNumber++
-        if(input === ''){
-            createGameCards(pageNumber)
-        }else {
-            searchGamesWithDebounce(input.value, pageNumber)
-        }
-    }
-});

@@ -1,23 +1,12 @@
-import { apiKey } from "./games-fetch.js";
-import { GAMES } from "./games-fetch.js";
-
-export const getGameDescription = () => {
-  const url = `https://rawg.io/api/games?key=${apiKey}`;
-
-  fetch(url)
-    .then(res => res.json())
-    .then(data => data.results)
-    .then(games => games.map(game => {fetchCardsDetails(game.id)}))
-    .catch(error => console.error('Error:', error));
-
-
-    const fetchCardsDetails = async (id) => {
-        return fetch(`https://rawg.io/api/games/${id}?key=${apiKey}`)
+export const getGameDescription = (games, apiKey) => {
+    games.map(game => {
+        fetch(`https://rawg.io/api/games/${game.id}?key=${apiKey}`)
                 .then(response => response.json())
                 .then(data => {obtainGamesDetails(data)})
                 .catch(error => console.error(error))
-    };
+    });
 
+    
     const obtainGamesDetails = (game) => {
         let cards = document.querySelectorAll(".card")
        
@@ -32,7 +21,7 @@ export const getGameDescription = () => {
             };
         };
         
-        GAMES.forEach(gameObject => {
+        games.forEach(gameObject => {
             gameObject.description = game.description
             gameObject.developers = game.developers
             gameObject.publishers = game.publishers

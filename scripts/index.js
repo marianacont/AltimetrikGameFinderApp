@@ -14,13 +14,27 @@ const logoutBtn = document.querySelectorAll('.logout');
 const searchInput = document.querySelector('.search-input');
 const lastSearchesMenuLink = document.getElementById('last-searches');
 const homeLink = document.querySelector('#home-link');
+let pageNumber = 1
 
 window.addEventListener('load', () => {
     const isUser = localStorage.getItem('user')
     if(isUser == null){
-        window.location.href = 'index.html'
+        if(sessionStorage.getItem('session') == null){
+            window.location.href = 'index.html'
+        }
     }
-})
+});
+
+//Infinite scrolling
+window.addEventListener('scroll', (e) => {
+    e.preventDefault()
+    const { scrollTop, clientHeight, scrollHeight } = document.documentElement
+    if(scrollTop + clientHeight >= scrollHeight ){
+        pageNumber++
+        createGameCards(pageNumber)
+        console.log(`final de pagina ${pageNumber}`)
+    }
+});
 
 
 // Dark/light mode functionality
@@ -35,29 +49,29 @@ colBtn.forEach(changeColumnViewListener)
 
 
 // fetch api
-// createGameCards(1)
-// getGameDescription()
-// homeLink.addEventListener('click', () => {
-//     gallery.innerHTML = ''
-//     createGameCards(1) 
-//     getGameDescription()
-// })
+createGameCards(1)
+getGameDescription()
+homeLink.addEventListener('click', () => {
+    gallery.innerHTML = ''
+    createGameCards(1) 
+    getGameDescription()
+})
 
 
 // Logout
 logoutBtn.forEach(logoutListener)
 
 //Search games
-// searchInput.addEventListener('input', (e) => {
-//     e.preventDefault();
-//     let value = e.target.value.toLowerCase()
-//     if(value.trim() === ''){
-//         console.log(`${value} is an empty string` );
+searchInput.addEventListener('input', (e) => {
+    e.preventDefault();
+    let value = e.target.value.toLowerCase()
+    if(value.trim() === ''){
+        console.log(`${value} is an empty string` );
         
-//     }else {
-//         searchGamesWithDebounce(value)
-//     }
-// });
+    }else {
+        searchGamesWithDebounce(value)
+    }
+});
 
 // Last searches
 lastSearchesMenuLink.addEventListener('click',  (e) => {

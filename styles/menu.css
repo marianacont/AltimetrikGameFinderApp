@@ -270,6 +270,7 @@ div.sections > img {
     #nav {
         justify-content: space-between;
         grid-template-areas: "log sea us";
+        min-width: 1200px;
     }
     #menu{
         display: flex;
