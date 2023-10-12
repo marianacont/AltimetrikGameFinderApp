@@ -20,5 +20,16 @@ form.addEventListener('submit', (e) => {
 });
 
 
+const isLogged = () => {
+    const isUser = localStorage.getItem('user')
+    if (isUser){
+        window.location.href = 'games.html'
+    }
+}
+
 // Dark mode
-window.addEventListener('load', darkModeLogin)
+window.addEventListener('load', ()=> {
+    darkModeLogin
+    isLogged()
+})
+

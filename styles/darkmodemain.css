@@ -67,6 +67,10 @@
     background-color: #000;
 }
 
+.dark-mode .card_modal .modal_container span {
+    color: var(--white);
+}
+
 .dark-mode .card_modal .gradient_layer {
     background: linear-gradient( #00000000, #000 80%);
 }

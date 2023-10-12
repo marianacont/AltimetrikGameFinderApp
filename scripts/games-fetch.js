@@ -2,7 +2,7 @@ import { createModalCard } from "./game-card-modal.js";
 import { getGameDescription } from "./games-fetch-details.js";
 import { searchGamesWithDebounce } from "./games-search.js";
 
-export const apiKey = "fba17e9f91664885a6cfafa88948a796";
+export const apiKey = "dbf1a6788470440fb89deddb4c9cbb3a";
 let gallery = document.querySelector(".gallery");
 let pageNumber = 1
 export const GAMES = []
@@ -24,14 +24,13 @@ export const createGameCards = (pageNumber) => {
             }
         })
         .then(data => data.results)
-        .then(results => createCard(results))
+        // .then(results => createCard(results))
+        .then(results => updateGamesObject(results))
         .catch(error => console.error('Error:', error));
 };
 
-
-// Create card
- export const createCard = (games) => {
-    let card = ''
+// Updatee Games Object
+const updateGamesObject = (games) => {
     games.map(game =>{
         // Get genres from each game
         let genres = game.genres.map(genre => {
@@ -56,6 +55,39 @@ export const createGameCards = (pageNumber) => {
         // Get platforms from each game
         let platforms = game.parent_platforms.map(platform => `<img src="../assets/icons/${platform.platform.slug}.svg" alt="${platform.platform.name}">`).join('');
         gameObject.platforms_icons = platforms;
+
+        GAMES.push(gameObject)   
+        getGameDescription(gameObject, apiKey)
+    })
+}
+
+// Create card
+ export const createCard = (games) => {
+    let card = ''
+    games.map(game =>{
+    //     // Get genres from each game
+    //     let genres = game.genres.map(genre => {
+    //         let genreList =  genre.name
+    //         return genreList
+    //     }).join(' ');
+        
+
+    //     const gameObject = {
+    //         id: game.id,
+    //         title: game.name,
+    //         genres: genres,
+    //         platforms: game.parent_platforms,
+    //         background: game.background_image,
+    //         released: game.released,
+    //         number: games.indexOf(game) + 1,
+    //         esrb: game.esrb_rating,
+    //         images: game.short_screenshots,
+    //         slug: game.slug
+    //     }
+
+    //     // Get platforms from each game
+    //     let platforms = game.parent_platforms.map(platform => `<img src="../assets/icons/${platform.platform.slug}.svg" alt="${platform.platform.name}">`).join('');
+    //     gameObject.platforms_icons = platforms;
         
 
         
@@ -90,12 +122,13 @@ export const createGameCards = (pageNumber) => {
                 </div>
             </div>`
 
-            GAMES.push(gameObject)   
+            // GAMES.push(gameObject)   
+            // getGameDescription(gameObject, apiKey)
     });   
     gallery.insertAdjacentHTML('beforeend', card);
     let cardsArray = document.querySelectorAll('.card'); 
     createModalCard(GAMES, cardsArray)
-    getGameDescription(GAMES, apiKey)
+    // getGameDescription(GAMES, apiKey)
 };
 
 

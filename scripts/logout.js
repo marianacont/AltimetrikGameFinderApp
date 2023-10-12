@@ -5,6 +5,7 @@ const btnClose = document.querySelector('.close');
 
 export const logoutListener = (btn) => {
     btn.addEventListener('click',() => {
+        console.log('clicked')
         logout()
     });
 };

@@ -10,7 +10,8 @@ import { makeListOfSearches, gallery } from "./create-search-list.js";
 const switchMode = document.querySelectorAll('.switch');
 const lens = document.querySelector('.lens');
 const colBtn = document.querySelectorAll("img[class*='col']")
-const logoutBtn = document.querySelectorAll('.logout');
+const logoutBtn = document.getElementById('logout');
+const logoutDesktop = document.getElementById('logout-desktop');
 const searchInput = document.querySelector('.search-input');
 const lastSearchesMenuLink = document.getElementById('last-searches');
 const homeLink = document.querySelector('#home-link');
@@ -59,7 +60,8 @@ homeLink.addEventListener('click', () => {
 
 
 // Logout
-logoutBtn.forEach(logoutListener)
+logoutListener(logoutBtn);
+logoutListener(logoutDesktop);
 
 //Search games
 searchInput.addEventListener('input', (e) => {
