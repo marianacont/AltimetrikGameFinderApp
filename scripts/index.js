@@ -17,14 +17,14 @@ const lastSearchesMenuLink = document.getElementById('last-searches');
 const homeLink = document.querySelector('#home-link');
 let pageNumber = 1
 
-window.addEventListener('load', () => {
-    const isUser = localStorage.getItem('user')
-    if(isUser == null){
-        if(sessionStorage.getItem('session') == null){
-            window.location.href = 'index.html'
-        }
-    }
-});
+// window.addEventListener('load', () => {
+//     const isUser = localStorage.getItem('user')
+//     if(isUser == null){
+//         if(sessionStorage.getItem('session') == null){
+//             window.location.href = 'index.html'
+//         }
+//     }
+// });
 
 //Infinite scrolling
 window.addEventListener('scroll', (e) => {
