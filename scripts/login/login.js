@@ -11,7 +11,7 @@ const findUser = async () => {
     }
 
     try {
-        const response = await fetch("http://localhost:3000/login", {
+        const response = await fetch("https://game-finder-app.vercel.app/", {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {"Content-type": "application/json; charset=UTF-8"}
