@@ -11,7 +11,6 @@ export const getGameDescription = (gameObject, apiKey) => {
         gameObject.publishers = game.publishers
         gameObject.website = game.website
 
-        console.log(gameObject)
     }
     
     const addetails = (game) => {
